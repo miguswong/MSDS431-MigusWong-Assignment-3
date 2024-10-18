@@ -16,33 +16,11 @@ anscombe <- data.frame(
     y4 = c(6.58, 5.76,  7.71, 8.84, 8.47, 7.04, 5.25, 12.5, 5.56, 7.91, 6.89))
 
 # show results from four regression analyses
+start_time <- Sys.time()
 with(anscombe, print(summary(lm(y1 ~ x1, data = anscombe))))
 with(anscombe, print(summary(lm(y2 ~ x2, data = anscombe))))
 with(anscombe, print(summary(lm(y3 ~ x3, data = anscombe))))
 with(anscombe, print(summary(lm(y4 ~ x4, data = anscombe))))
-
-# place four plots on one page using standard R graphics
-# ensuring that all have the same scales
-# for horizontal and vertical axes
-pdf(file = "fig_anscombe_R.pdf", width = 8.5, height = 8.5)
-par(mfrow=c(2,2), mar=c(5.1, 4.1, 4.1, 2.1))
-with(anscombe, plot(x1, y1, xlim=c(2,20), ylim=c(2,14), pch = 19, 
-    col = "darkblue", cex = 1.5, las = 1, xlab = "x1", ylab = "y1"))  
-title("Set I")
-with(anscombe,plot(x2, y2, xlim=c(2,20), ylim=c(2,14), pch = 19, 
-    col = "darkblue", cex = 1.5, las = 1, xlab = "x2", ylab = "y2"))
-title("Set II")
-with(anscombe,plot(x3, y3, xlim=c(2,20), ylim=c(2,14), pch = 19, 
-    col = "darkblue", cex = 1.5, las = 1, xlab = "x3", ylab = "y3"))
-title("Set III")
-with(anscombe,plot(x4, y4, xlim=c(2,20), ylim=c(2,14), pch = 19, 
-    col = "darkblue", cex = 1.5, las = 1, xlab = "x4", ylab = "y4"))
-title("Set IV")
-dev.off()
-
-# par(mfrow=c(1,1),mar=c(5.1, 4.1, 4.1, 2.1))  # return to plotting defaults
-
-# Suggestions for the student:
-# See if you can develop a quartet of your own, 
-# or perhaps just a duet, two very different data sets 
-# with the same fitted model.
+end_time <- Sys.time()
+execution_time <- end_time - start_time
+print(paste("Execution time:", execution_time))
