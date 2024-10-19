@@ -264,3 +264,7 @@ Multiple R-squared:  0.6665,    Adjusted R-squared:  0.6295
 F-statistic: 17.99 on 1 and 9 DF,  p-value: 0.00217
 ```
 ## Reccomendation to Management
+
+While Go offers accuracy and execution times comparable, if not better than some of the traditional Data Science programming languages (mainly R and Python), the main concern that should be noted from a data exploration perspective is the robustness of functionality readily available. Libraries in Python such as Seaborn, Pandas, and numpy, make statistical analysis easy and detailed as seen in the output of the the results. Go does not nearly have the same breadth of support for statistical analysis resources.
+
+Because of this disparity in functionality, *it is reccomended that the data scientists continue to use Python/R as the main languages due to their large community and available tools/libraries.*
